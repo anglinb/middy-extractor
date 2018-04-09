@@ -1,0 +1,25 @@
+{
+  "name": "middy-extractor",
+  "version": "0.0.0-development",
+  "description": "Extracts values from paths on event",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anglinb/middy-extractor.git"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [
+    "middy",
+    "middleware",
+    "lambda",
+    "extractor"
+  ],
+  "author": "Brian Anglin <banglin@usc.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "semantic-release": "^15.1.5"
+  }
+}
