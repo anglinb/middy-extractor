@@ -1,0 +1,20 @@
+language: node_js
+cache:
+  directories:
+  - "~/.npm"
+notifications:
+  email: false
+node_js:
+- '8'
+script:
+  - npm run test
+  - npm run build
+
+after_success:
+- npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
+env:
+  matrix:
+    secure: TY7ChUsxL/w8cmn8W4xP00LHg0YU8q0wWlYwwByiRZ8EA1FL+fgLcyMlf13szAN7EAiIAJbjSeAZtB+ZeufrS9Y3s0FHps6/a19vKlNH20GhKMGetirB2Jta0j3fxnhFUa6jMXlJijtwYji9k+T5qKnFxqui4Pb2SoFzcxuWK62a1ZVZmkXTHvd2MEi9be9eeAjWxFFfYz2nsZSqOqEXYy4N8554hieXdS3pM8efs6SsUE7LZ9SW+Is1cjUn/xe/8CVGZVoCQOlJzicF4OdR68VqqMKZZLacffAqDaVt6nan1jWf5LjZ05gCCHyg5TwbSzwbke5rPMn4vOAr9wU/rqJ9AXvt/Ac7vU10A2nbJYIi/X7p9WIr+Wa7oEeMhTFHhpBU2KfCg30PpeuIM9KtY6IgMUUel7b9m3F0nNf6hwmhVKokGcEtQpB+swm+XnzTNxQXOby/ZPlnC1oBwnYMQJY47Zvny3SLtvT2mdF0xxSggnN7ElMAJd0CoLTr/YpKGPutoceYLGNxtnXlRQnJUHoqvOu3N+e8W82z3TTNJY4SM0XA06mkjI3X/H0PNuBnsdXbJ7IoY5QXfV8NwJbYCkee2LnrPEqgcxZ30GRpfxmITjqjS7VI7PEUMYvyY3tKo4Q+SFjkJapYRxs1Asg1EpAf/pEWQNkU+ad9kc3TsD4=
